@@ -30,9 +30,9 @@ class LibroController {
         }
     }
 
-    public function ListaLibros($descripcionlimitada){
+    public function ListaLibros(){
        
-        $respuesta = LibroModel::MostrarLibros($descripcionlimitada);
+        $respuesta = LibroModel::MostrarLibros();
         return $respuesta;
         
     }

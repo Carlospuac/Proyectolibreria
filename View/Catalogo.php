@@ -5,7 +5,7 @@ use Controller\LibroController;
 $libro = new LibroController();
 
 $descripcionlimitada = false;
- 
+
 $registro = $libro->ListaLibros($descripcionlimitada);
 
 ?>
@@ -16,7 +16,7 @@ $registro = $libro->ListaLibros($descripcionlimitada);
 
     <?php foreach ($registro as $row => $item) {  ?>
 
-    <div class='col-3 card-group '>
+    <div class=' card-group '>
         <div class='card mb-4'>
             <div class='card-header'>
                 <?php echo $item['NombreLibro']; ?>
@@ -45,11 +45,13 @@ $registro = $libro->ListaLibros($descripcionlimitada);
             </div>
 
             <div class='card-footer text-muted'>
-             Q <?php echo $item['Precio']; ?>
+                Q <?php echo $item['Precio']; ?>
             </div>
 
         </div>
     </div>
+
     <?php } ?>
+
 
 </div>

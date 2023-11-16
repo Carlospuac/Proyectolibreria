@@ -26,11 +26,10 @@ class LibroModel
         }
     }
 
-    public static function MostrarLibros($descripcionlimitada)
+    public static function MostrarLibros()
     {
-        $descripcion = $descripcionlimitada ? 'Descripcion':'SUBSTRING(Descripcion, 1, 100) as Descripcion';
-        
-        $stmt = ConexionModel::conectar()->prepare("SELECT idlibro,NombreLibro, {$descripcion}, Precio, Cantidad, Aniopublicacion, categoria.NomCategoria,  CONCAT(autor.Nombres, ' ',autor.Apellidos) AS Autor from libro INNER JOIN categoria ON libro.FkCategoria = categoria.idCategoria INNER JOIN autor ON libro.FkAutor = autor.IdAutor  order by idlibro asc ;");
+ 
+        $stmt = ConexionModel::conectar()->prepare("SELECT idlibro,NombreLibro, Descripcion, Precio, Cantidad, Aniopublicacion, categoria.NomCategoria,  CONCAT(autor.Nombres, ' ',autor.Apellidos) AS Autor from libro INNER JOIN categoria ON libro.FkCategoria = categoria.idCategoria INNER JOIN autor ON libro.FkAutor = autor.IdAutor  order by idlibro asc ;");
         $stmt->execute();
         return $stmt->fetchAll();
     }
