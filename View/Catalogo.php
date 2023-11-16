@@ -45,7 +45,7 @@ $registro = $libro->ListaLibros($descripcionlimitada);
             </div>
 
             <div class='card-footer text-muted'>
-                Q <?php echo $item['Precio']; ?>
+                Qs <?php echo $item['Precio']; ?>
             </div>
 
         </div>
